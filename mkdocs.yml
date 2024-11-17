@@ -1,0 +1,6 @@
+site_name: Mekanism Docs
+nav:
+  - Home: index.md
+  - Features: features.md
+not_in_nav: |
+  /features
