@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - Systems: systems.md
 not_in_nav: |
+  /multiblocks
   /systems
 extra_css:
   - stylesheets/extra.css
