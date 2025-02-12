@@ -2,7 +2,9 @@ site_name: Mekanism Docs
 nav:
   - Home: index.md
   - Systems: systems.md
+  - Configs: configs.md
 not_in_nav: |
+  /configs
   /multiblocks
   /systems
 extra_css:
