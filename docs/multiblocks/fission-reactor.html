@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fission Reactor</title>
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<!-- Navigation Bar -->
+<div class="topnav">
+	<a href="../index.html">Home</a>
+	<a href="../systems.html">Systems</a>
+	<a href="../configs.html">Configs</a>
+</div>
+<!-- Main Content -->
+<div class="content">
+	<h1>The Most Optimal and Compact 1435 mB/t Burn-rate Fission Reactor Setup</h1>
+
+	<p>Author: <a href="https://github.com/UnknownSerhan">UnknownSerhan</a>.</p>
+	<p><strong>IMPORTANT NOTE:</strong> This setup only produces 16.39 MFE/t and isn't optimized for energy production.
+		Making the turbine sustain all the flow rate is the primary target here, which results in less energy
+		production. If you want to use fission reactor to produce even more energy, you need 3 maximum turbines to
+		produce as much energy as you can.</p>
+
+	<h1>⚠️ Things You Need to Know ⚠️</h1>
+	<ul>
+		<li>The benefits of using sodium cooling is most visible on big setups such as this one. There are some smaller
+			setups which also require sodium cooling, but they aren't as viable as this setup (they have less effect on
+			max burn rate).
+		</li>
+		<li>This setup requires 1.239.000.000 mB grand total of sodium to work properly, otherwise you can't reach the
+			maximum burn rate.
+		</li>
+		<li>Do <strong>NOT</strong> use transmitters (pressurized tubes, mechanical pipes) to transfer
+			sodium/steam/water on big setups, especially on this setup. This setup produces lots of content which has to
+			be carried to other multiblocks fast enough. Using transmitters to transfer the contents will need hundreds
+			of transmitters which will result in low fps! Because of this, this setup uses "Port to Port" method to
+			transfer its contents (see the next comment below to learn more).
+		</li>
+		<li>"Port to Port" lets you transfer contents between multiblocks with an "infinite" transfer rate. Ports of
+			multiblocks are touching each other to transfer their contents with no transmitters at all, because
+			transmitters are a huge bottleneck when there isn't enough of them. Port to port is very useful on big
+			setups such as this.
+		</li>
+		<li>You <strong>MUST</strong> keep all the chunks of the setup loaded for it to work, otherwise the reactor
+			might explode.
+		</li>
+	</ul>
+
+	<img src="../media/Serhan/preview.png" alt=""/>
+
+	<h1>🛠️ How to Build 🛠️</h1>
+
+	<h2>Fission Reactor</h2>
+
+	<ol>
+		<li>Build a 18x18x18 frame and fill the faces with either casings or reactor glass.</li>
+		<li>Place the fissile fuel assembly columns and control rod assemblies by considering "Checkerboard Pattern"
+			(columns shouldn't touch each other, they will touch only diagonally). You can place up to 1920 fissile fuel
+			assemblies if you want to, but it won't let you achieve higher burn rates, it is just for aesthetics and
+			more
+			fuel/waste storage in reactor.
+		</li>
+		<li>Add the ports for the reactor (see the images below).</li>
+	</ol>
+
+	<h2>Boiler</h2>
+
+	<ol>
+		<li>Build a 18x18x18 frame with boiler casings and fill the faces with either casings or reactor/structural
+			glass.
+		</li>
+		<li>Place the pressure dispersers 4 block below the top layer (so there are 3 empty layers above pressure
+			dispersers).
+		</li>
+		<li>Place 90 superheating elements anywhere below pressure dispersers.</li>
+		<li>Add the valves for the boiler (see the images below).</li>
+	</ol>
+
+	<h2>Turbine</h2>
+	<ol>
+		<li>Build a 17x16x17 frame (you can make it 2 blocks higher if you want to store more energy in the turbine or
+			just care about aesthetics) with turbine casings and fill the bottom with either structural glass or turbine
+			casings.
+		</li>
+		<li>Find the center block of the bottom layer and place 2 rotors.</li>
+		<li>Add 1-4 blades, depending on if you want to use the energy or just dump it. See how to dump the energy in
+			<b>"Images"</b> section.
+		</li>
+		<li>Place the rotational complex above the rotors.</li>
+		<li>Place pressure dispersers on the same layer as the rotational complex.</li>
+		<li>Place an electromagnetic coil on top of the rotational complex.</li>
+		<li>Place 450 saturating condensers anywhere inside the turbine.</li>
+		<li>Add vents on the roof of the turbine and everywhere above the steam tank of the turbine. You will need at
+			least 900 vents in total.
+		</li>
+		<li>Add the valves for the turbine (see the images below).</li>
+	</ol>
+
+	<h1>📌 Circuit Breakers 📌</h1>
+
+	<h2>Circuit Breaker</h2>
+
+	<p>If you want your reactor to shut itself down when there is a problem, you can build a circuit breaker.</p>
+
+	<figure>
+		<img src="../media/Serhan/circuit-breaker.png" alt="" class="grow"/>
+		<figcaption>The most basic circuit breaker.</figcaption>
+	</figure>
+
+	<p>On this circuit breaker, the bottom redstone logic adapter is set to "High Temperature" mode.
+		Once the reactor has reached critical temperatures, this redstone logic adapter will send a redstone signal and
+		activate the piston, which will activate the top redstone logic adapter. The top redstone logic adapter is set
+		to "Activation" mode. This logic adapter will turn off the reactor when redstone signal is provided for it.
+		There is also a pressurized tube that has redstone sensitivity enabled. Once the bottom redstone logic adapter
+		emits a redstone signal, the torch will go off and it will enable the pressurized tube. The pressurized tubes
+		have sodium in them, which will rush into the reactor to cool it down. It is important to have a significant
+		amount of sodium ready to rush in the reactor, small amounts of sodium won't be able to cool the reactor down.
+	</p>
+
+	<h2>My Own Circuit Breaker Design</h2>
+
+	<p>There is a simpler circuit breaker design that works instantly and is precise:</p>
+
+	<div class="packed">
+		<div><img src="../media/Serhan/simple-circuit-breaker.png" alt=""/></div>
+		<div>
+			<video controls>
+				<source src="../media/Serhan/simple-circuit-breaker.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div>
+
+	<p>This circuit breaker uses a laser tractor beam to break the reactor in an emergency to stop it completely. This
+		breaker is useful especially when your reactor explodes due to server-sided chunk loading issues.</p>
+
+	<h1>❓ Frequently Asked Questions ❓</h1>
+
+	<hr/>
+	<p><strong>Q:</strong> With the new 10.3.6 update for 1.19.2, I can add decimals to reactor burn rate number. Should
+		I add decimals to 1435 to get more burn rate?
+	</p>
+	<p><strong>A:</strong> It depends. Since the biome temperature is being taken into account while the reactor runs,
+		the maximum decimal you can go between 1435 and 1436 depends on the biome temperature. You can go higher
+		decimals on colder biomes but warning: this is not safe at all and might damage the reactor! If you want to be
+		completely safe, just keep it at 1435.
+	</p>
+	<hr/>
+	<p><strong>Q:</strong> I am using Quantum Entangloporters to transfer the contents of the multiblocks. Is it a good
+		idea?</p>
+	<p><strong>A:</strong> Quantum Entangloporter have an internal buffer which is very low for this setup. You would
+		need hundreds of Quantum Entangloporter to get the job done (just like transmitters), so it is not recommended
+		at all.</p>
+	<hr/>
+	<p><strong>Q:</strong> How do you calculate how many vents and how many saturating condensers you need?</p>
+	<p><strong>A:</strong> First, you need to figure out the flow rate of steam coming to the turbine. For example, 1435
+		burn rate reactor generates 287.000.000 mB of superheated sodium which generates about 28.700.000 mB of steam
+		(it is 10:1 ratio between sodium and steam). Each vent adds 32.000 mB of flow rate to the turbine. By dividing
+		the flow rate of steam to 32.000, you can find out how many vents you need. To calculate how many saturating
+		condensers you need, just divide the vent count you found to 2. This will give you the number of saturating
+		condensers you need.</p>
+	<hr/>
+	<p><strong>Q:</strong> How can I figure out how many Solar Neutron Activators do I need?</p>
+	<p><strong>A:</strong> This depends on the biome and the height you place the Solar Neutron Activators (SNA) in.
+		Colder biomes and higher places are better for Solar Neutron Activators and they will work faster. To find out
+		how many of them you need for this setup, divide 143.5 to the number "a Solar Neutron Activator's max production
+		at noon" to get the number needed.</p>
+	<hr/>
+	<p><strong>Q:</strong> I have infinite water sources, do I really need to cycle water from the turbine/do I really
+		need a turbine?</p>
+	<p><strong>A:</strong> If you have some sort of transfer method that doesn't have a limit to transfer the water from
+		the infinite water source to the boiler, then you don't have to cycle water from your turbine. You can't avoid
+		building a turbine because if you do, the steam will stay in the boiler and if the steam tank gets full, the
+		boiler will stop working!</p>
+	<hr/>
+
+	<h1>📝 Images Related to the Setup 📝</h1>
+
+	<figure>
+		<img src="../media/Serhan/gallery_1.png" alt=""/>
+		<figcaption>
+			<strong>&ldquo;Port to Port&rdquo; Placement for Sodium Cycle Between The Reactor and The
+				Boiler</strong><br/>
+			(The port on the left is for filling the boiler up with water when needed)
+		</figcaption>
+	</figure>
+
+	<figure>
+		<img src="../media/Serhan/gallery_2.png" alt=""/>
+		<figcaption>
+			<strong>&ldquo;Port to Port&rdquo; Placement for Steam Output From Boiler Into The Turbine</strong>
+		</figcaption>
+	</figure>
+
+	<figure>
+		<img src="../media/Serhan/gallery_3.png" alt=""/>
+		<figcaption>
+			<strong>&ldquo;Port to Port&rdquo; Placement for Water Input from Turbine Into The Boiler</strong><br/>
+			(There is a <b>turbine vent</b> behind the port!)
+		</figcaption>
+	</figure>
+
+	<figure>
+		<img src="../media/Serhan/gallery_4.png" alt=""/>
+		<figcaption>
+			<strong>The Turbine's Steam Tank</strong>
+		</figcaption>
+	</figure>
+
+	<figure>
+		<img src="../media/Serhan/gallery_5.png" alt=""/>
+		<figcaption>
+			<strong>The Turbine's Inside View</strong>
+		</figcaption>
+	</figure>
+
+	<figure>
+		<img src="../media/Serhan/gallery_6.png" alt=""/>
+		<figcaption>
+			<strong>The View of The Setup From Top</strong>
+		</figcaption>
+	</figure>
+
+	<figure>
+		<img src="../media/Serhan/galley_7.png" alt=""/>
+		<figcaption>
+			<strong>Boiler's Steam Tank View</strong><br/>
+			(It is 3 empty layers for the setup to work properly!)
+		</figcaption>
+	</figure>
+
+	<figure>
+		<div class="packed">
+			<div><img src="../media/Serhan/resistive-heater_1.png" alt=""/></div>
+			<div><img src="../media/Serhan/resistive-heater_2.png" alt=""/></div>
+		</div>
+		<figcaption>
+			<strong>The Energy Dumper (Resistive Heater) For The Turbine</strong><br/>
+			(You need to set the energy usage to 9999999999999)
+		</figcaption>
+	</figure>
+
+	<figure>
+		<img src="../media/Serhan/fission-stats.png" alt=""/>
+		<figcaption>
+			<strong>Fission Stats</strong>
+		</figcaption>
+	</figure>
+
+	<figure>
+		<div class="packed">
+			<div><img src="../media/Serhan/boiler-stats_1.png" alt=""/></div>
+			<div><img src="../media/Serhan/boiler-stats_2.png" alt=""/></div>
+		</div>
+		<figcaption>
+			<strong>Boiler Stats</strong>
+		</figcaption>
+	</figure>
+
+	<figure>
+		<div class="packed">
+			<div><img src="../media/Serhan/turbine-stats_1.png" alt=""/></div>
+			<div><img src="../media/Serhan/turbine-stats_2.png" alt=""/></div>
+		</div>
+		<figcaption>
+			<strong>Turbine Stats</strong>
+		</figcaption>
+	</figure>
+
+	<h1>☢️ Fissile Fuel Setup That Can Sustain This Setup ☢️</h1>
+
+	<figure>
+		<div class="packed">
+			<div><img src="../media/Serhan/sequence/0.png" alt=""/></div>
+			<div><img src="../media/Serhan/sequence/1.png" alt=""/></div>
+		</div>
+		<div class="packed">
+			<div><img src="../media/Serhan/sequence/2.png" alt=""/></div>
+			<div><img src="../media/Serhan/sequence/3.png" alt=""/></div>
+			<div><img src="../media/Serhan/sequence/4.png" alt=""/></div>
+		</div>
+		<div class="packed">
+			<div><img src="../media/Serhan/sequence/5.png" alt=""/></div>
+			<div><img src="../media/Serhan/sequence/6.png" alt=""/></div>
+			<div><img src="../media/Serhan/sequence/7.png" alt=""/></div>
+		</div>
+	</figure>
+
+	<h2>Materials Required</h2>
+	<p><strong>NOTE:</strong> Make sure all machines are fully upgraded on Speed and Energy!</p>
+	<ul>
+		<li>4 Ultimate Enrichment Factories</li>
+		<li>Bins (Optional)</li>
+		<li>2 Logistical Sorters</li>
+		<li>30 Chemical Oxidizers</li>
+		<li>3 Chemical Infusers</li>
+		<li>2 Chemical Dissolution Chambers</li>
+		<li>1 Formulaic Assemblicator (Optional)</li>
+		<li>6 Isotopic Centrifuges</li>
+	</ul>
+
+	<p>The first Logistical Sorter needs to be set to send 32 Yellow Cake Uraniums at once, you can make it send more at
+		once if you have enough uranium.</p>
+
+	<p>Using Fluorite Blocks makes it easier for Chemical Dissolution Chambers, so you can consider converting all your
+		Fluorite into Fluorite Blocks (That is what the Formulaic Assemblicator is doing).</p>
+
+</div>
+</body>
+</html>
