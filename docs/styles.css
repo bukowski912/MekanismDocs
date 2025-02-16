@@ -1,5 +1,5 @@
 html {
-	/*background-color: #04AA6D;*/
+	background-color: #333333;
 	background-image: url("media/background-glow.png");
 	overflow-x: clip;
 	width: 100vw;
@@ -32,15 +32,26 @@ h1, h2, li, hr {
 	margin-top: 1.2em;
 }
 
+.condensed li {
+	margin-top: 0.6em;
+}
+
+h3 {
+	font-style: italic;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
 hr {
 	border-width: 4px;
 	border-color: #04AA6D;
 }
 
-h2, h3 {
-	font-style: italic;
-	font-weight: 400;
-	letter-spacing: 1px;
+.radioactive {
+	background: #04AA6D;
+	border: 1px solid #04AA6D;
+	border-radius: 8px;
+	padding: 0 6px;
 }
 
 /* Formatting for figures */
@@ -113,9 +124,27 @@ tr:nth-child(even) {
 	background-color: #333;
 }
 
+th {
+	background-color: white;
+	color: black;
+	opacity: 60%;
+	padding: 8px 16px;
+	position: sticky;
+	top: 0;
+}
+
+td {
+	padding: 8px;
+}
+
 th, td {
 	border-color: #04AA6D;
-	padding: 8px 80px 8px 8px;
+	min-width: 100px;
+}
+
+td ul {
+	list-style-position: inside;
+	padding-left: 8px;
 }
 
 /* Fancy animations */
