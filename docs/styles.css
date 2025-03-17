@@ -6,7 +6,7 @@ html {
 }
 
 body {
-	background-color: #222;
+	background-color: #222E;
 	box-sizing: border-box;
 	color: #FFF;
 	font-family: Inter, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -15,20 +15,28 @@ body {
 	margin: 0 auto;
 	min-height: 100vh;
 	padding: 0 0 32px 0;
-	max-width: 1000px;
+/* 	max-width: 1000px; */
 }
 
 /* Formatting for text */
+
 a {
 	color: #ddd;
 }
 
-h1, h2 {
-	font-weight: 400;
-	letter-spacing: 0.02em;
+code {
+	font-size: 10pt;
 }
 
-h1, h2, li, hr {
+/*h1 { font-size: 32pt; }
+h2 { font-size: 28pt; }
+p { font-size: 14pt; }*/
+
+h1, h2, h3 {
+	font-weight: 400;
+}
+
+h1, h2, li, hr, ul {
 	margin-top: 1.2em;
 }
 
@@ -55,6 +63,7 @@ hr {
 }
 
 /* Formatting for figures */
+
 figure {
 	background: repeating-linear-gradient(-45deg, #222222, #333333 20px, #9198e5 20px, #9198e5 20px);
 	border-radius: 4px;
@@ -68,6 +77,7 @@ figcaption {
 }
 
 /* Formatting for media */
+
 img, video {
 	max-width: 100%;
 	object-fit: contain;
@@ -88,16 +98,14 @@ img, video {
 	flex: 1 1 0;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
+#pagelinks {
 	background-color: #333;
 	display: flex;
 	flex-wrap: nowrap;
 	overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
+#pagelinks a {
 	color: #f2f2f2;
 	flex-grow: 1;
 	font-size: 17px;
@@ -108,46 +116,54 @@ img, video {
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
+#pagelinks a:hover {
 	background-color: #ddd;
 	color: black;
 }
 
 /* Add a color to the active/current link */
-.topnav a.active {
+#pagelinks a.active {
 	background-color: #04AA6D;
 	color: white;
 }
 
 /* Formatting for tables */
+table {
+	margin-bottom: 16px;
+}
+
 tr:nth-child(even) {
 	background-color: #333;
+}
+
+tr:nth-child(odd) {
+	background-color: #222;
 }
 
 th {
 	background-color: white;
 	color: black;
-	opacity: 60%;
-	padding: 8px 16px;
 	position: sticky;
 	top: 0;
 }
 
-td {
-	padding: 8px;
-}
-
 th, td {
 	border-color: #04AA6D;
-	min-width: 100px;
+	padding: 4px 16px;
 }
 
 td ul {
 	list-style-position: inside;
-	padding-left: 8px;
+}
+
+td.numeric {
+	text-align: center;
+	font-size: 11pt;
+	font-weight: bold;
 }
 
 /* Fancy animations */
+
 .grow {
 	transition: all .2s ease-in-out;
 }
